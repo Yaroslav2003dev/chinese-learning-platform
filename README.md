@@ -1,66 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Система для изучения китайского языка
+Система помогает пользователю регулярно изучать китайский язык, отслеживая прогресс в личном кабинете. С помощью меню пользователь может перейти к разделу, в котором расположена теория на определённую тему китайского языка, а перейдя в другой раздел, пользователь может закрепить теорию с помощью тестов, ещё есть раздел, помогающий выучить новые слова, используя перевод с китайского на русский язык или перевод с русского на китайский язык.
 
+## Содержание
+- [Функции системы](#функции-системы)
+    - [Личный кабинет](#личный-кабинет)
+    - [Теория](#теория)
+    - [Тесты](#тесты)
+    - [Карточки для изучения слов](#карточки-для-изучения-слов)
+    - [Повторение слов](#повторение-слов)
+- [Технологический стек](#технологический-стек)
+- [Архитектура системы](#архитектура-системы)
+- [Требования для запуска](#требования-для-запуска)
+
+## Функции системы
+### Личный кабинет
+В личном кабинете пользователя видны результаты пройденных тестов и выученные слова.
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="docs/images/img.png" width="400" alt="Личный кабинет">
 </p>
 
-## About Laravel
+### Теория
+Можно выбрать интересующую тему и прочитать про неё в интерактивном учебнике.
+<p align="center">
+  <img src="docs/images/img_1.png" width="400" alt="Личный кабинет">
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Тесты
+Проверить теорию помогают тесты на разнообразные темы.
+<p align="center">
+  <img src="docs/images/img_2.png" width="400" alt="Тесты">
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Все тесты имеют варианты выбора ответа.
+<p align="center">
+  <img src="docs/images/img_3.png" width="400" alt="Тест">
+</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+После завершения теста можно посмотреть результат.
+<p align="center">
+  <img src="docs/images/img_4.png" width="400" alt="Тест">
+</p>
 
-## Learning Laravel
+Также можно открыть пройденное задание для сравнения ответа пользователя с правильным ответом системы.
+<p align="center">
+  <img src="docs/images/img_5.png" width="400" alt="Тест">
+</p>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Карточки для изучения слов
+Раздел "Карточки" предлагает 2 варианта изучения новых слов либо используя перевод с русского на китайский язык, либо с китайского на русский язык.
+<p align="center">
+  <img src="docs/images/img_6.png" width="400" alt="Карточки для изучения и повтора китайских слов">
+</p>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<p align="center">
+  <img src="docs/images/img_8.png" width="400" alt="Карточки для изучения и повтора китайских слов">
+</p>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<p align="center">
+  <img src="docs/images/img_9.png" width="400" alt="Карточки для изучения и повтора китайских слов">
+</p>
 
-## Laravel Sponsors
+### Повторение слов
+Пользователь может отмечать слова с помощью кнопок «Знаю» и «Не знаю», чтобы управлять списком выученной лексики:
+- Знаю — исключает слово из выборки для изучения слов и добавляет его в список выученных слов, отображаемый в личном кабинете;
+- Не знаю — удаляет слово из списка выученных слов и возвращает его в выборку для изучения.
+При изучении слов система формирует выборку с учётом установленных пользователем статусов карточек.
+<p align="center">
+  <img src="docs/images/img_7.png" width="400" alt="Карточки для изучения и повтора китайских слов">
+</p>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Технологический стек
+В проекте используются следующие технологии:
+- PHP — язык программирования, используемый для реализации серверной бизнес-логики;
+- Laravel — фреймворк для разработки серверной части приложения;
+- MySQL — реляционная система управления базами данных, предназначенная для хранения и обработки данных приложения;
+- HTML — язык разметки для формирования структуры пользовательского интерфейса;
+- CSS — язык стилей для оформления пользовательского интерфейса;
+- Bootstrap - CSS-фреймворк для создания адаптивного интерфейса веб-приложений.
 
-### Premium Partners
+## Архитектура системы
+Система разработана на основе клиент-серверной архитектуры. Взаимодействие компонентов приложения организовано по архитектурному шаблону MVC (Model–View–Controller).
+Основные компоненты системы:
+- Model (модель) — отвечает за взаимодействие с базой данных, получение и изменение данных пользователей, учебных материалов, слов и результатов тестирования;
+- View (представление) — отвечает за отображение пользовательского интерфейса, включая личный кабинет, теоретические материалы, тесты и карточки для изучения слов;
+- Controller (контроллер) — обрабатывает запросы пользователя, выполняет необходимую логику приложения и передаёт данные для отображения.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+При работе с приложением пользователь взаимодействует с веб-интерфейсом. Запрос поступает на сервер, где Laravel определяет соответствующий маршрут и передаёт управление контроллеру. Контроллер обрабатывает запрос, при необходимости обращается к моделям для получения или изменения данных в MySQL, а затем возвращает результат пользователю в виде страницы.
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Требования для запуска
+- PHP 8.1
+- MySQL
+- Современный веб-браузер
